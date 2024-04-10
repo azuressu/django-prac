@@ -7,3 +7,6 @@ from django.shortcuts import render
 def index(request) :
   # 이 함수로 요청이 들어왔을 때 할 일들을 적어주자
   return render(request, "index.html")
+
+def users(request) :
+  return render(request, "users.html")
