@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Data Throw</h1>
+  <form action="/data-catch/" method="GET">
+    <!-- GET - 데이터를 쿼리스트링(?) 방식으로 전달, URL 주소에 포함시켜 전달하는 방식 -->
+    <label for="my-data">데이터 입력</label>
+    <!-- name 속성이 있어야 받아줄 수 있음 -->
+    <input type="text" id="my-data" name="message">
+
+    <button type="submit">전송</button>
+
+  </form>
+{% endblock content %}

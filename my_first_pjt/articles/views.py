@@ -21,3 +21,14 @@ def hello(request) :
     "books" : books,
   }
   return render(request, "hello.html", context)
+
+def data_throw(request) :
+  return render(request, "data_throw.html")
+
+def data_catch(request) :
+  print("\n\n<<<<<<<<<<")
+  print(request)
+  print(request.GET)
+  message = request.GET.get("message")
+  context = {"message" : message}
+  return render(request, "data_catch.html", context)
