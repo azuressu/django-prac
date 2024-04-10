@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
@@ -7,5 +6,4 @@ from django.http import HttpResponse
 # 클래스형 뷰 - 하나의 클래스 안에 여러 개 함수, 다른 클래스도 상속 가능 (코드를 좀 더 줄일 수 있겠구나)
 def index(request) :
   # 이 함수로 요청이 들어왔을 때 할 일들을 적어주자
-  response = HttpResponse('<h1>Hello, Django !</h1>')
-  return response
+  return render(request, "index.html")
