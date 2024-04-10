@@ -10,3 +10,14 @@ def index(request) :
 
 def users(request) :
   return render(request, "users.html")
+
+def hello(request) :
+  name = "수연"
+  tags = ["java", "spring", "html", "css"]
+  books = ["백설공주", "신데렐라", "어린왕자", "잠자는 숲속의 공주"]
+  context = {
+    "name" : name,
+    "tags" : tags,
+    "books" : books,
+  }
+  return render(request, "hello.html", context)
