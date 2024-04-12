@@ -15,16 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from articles import views
 
+# 프로젝트의 urls
+# 여기에 articles, users의 urls.py를 포함시켜야 함
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
-    path('hello/', views.hello),
-    path('data-throw/', views.data_throw),
-    path('data-catch/', views.data_catch),
-    
-    path('users/', views.users),
-    path('users/<str:username>/', views.profile),
+    # 여기서 적어준 url은 spring에서 @RequestMapping("~~")에서 처리한 공통의 URL 주소
+    path('articles/', include('articles.urls')),
+    path('users/', include('users.urls')),
 ]

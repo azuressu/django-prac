@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "articles", # 적어주면 다음에 콤마 적어주지 않아도 추가 가능
+    "users",
 ]
 
 MIDDLEWARE = [
