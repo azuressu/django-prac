@@ -22,7 +22,7 @@ from articles import views
 # 여기에 articles, users의 urls.py를 포함시켜야 함
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('index/', views.index, name = "index"),
     # 여기서 적어준 url은 spring에서 @RequestMapping("~~")에서 처리한 공통의 URL 주소
     path('articles/', include('articles.urls')),
     path('users/', include('users.urls')),
