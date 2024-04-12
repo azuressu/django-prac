@@ -7,6 +7,6 @@ urlpatterns = [
     # File "/Users/suyeon/Desktop/django/my_first_pjt/users/urls.py", line 6, in <module>
     # path('', views.users),
     # AttributeError: module 'users.views' has no attribute 'users'
-    # path('', views.users),
-    path('<str:username>/', views.profile),
+    path('', views.users),
+    path('profile/<str:username>/', views.profile),
 ]
