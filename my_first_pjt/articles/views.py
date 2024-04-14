@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Article
 
 # Create your views here.
 
@@ -7,17 +8,6 @@ from django.shortcuts import render
 def index(request) :
   # 이 함수로 요청이 들어왔을 때 할 일들을 적어주자
   return render(request, "index.html")
-
-def hello(request) :
-  name = "수연"
-  tags = ["java", "spring", "html", "css"]
-  books = ["백설공주", "신데렐라", "어린왕자", "잠자는 숲속의 공주"]
-  context = {
-    "name" : name,
-    "tags" : tags,
-    "books" : books,
-  }
-  return render(request, "hello.html", context)
 
 def data_throw(request) :
   return render(request, "data_throw.html")
@@ -29,3 +19,22 @@ def data_catch(request) :
   message = request.GET.get("message")
   context = {"message" : message}
   return render(request, "data_catch.html", context)
+
+def articles(request) :
+  articles = Article.objects.all()
+  context = {
+    "articles" : articles
+  }
+  return render(request, "articles.html", context)
+
+def new(request) :
+  return render(request, "new.html")
+
+def create(request) :
+  # 새로운 아티클 DB에 저장하기
+  title = request.POST.get("title")
+  content = request.POST.get("content")
+  
+  # 새로운 아티클 저장
+  Article.objects.create(title = title, content=content)
+  return render(request, "create.html")
