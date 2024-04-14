@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    "django_extensions",
 
     "articles", # 적어주면 다음에 콤마 적어주지 않아도 추가 가능
     "users",
